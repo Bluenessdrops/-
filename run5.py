@@ -6,7 +6,6 @@ filePath = "E:/Kinlrmi.Clevorihno/Pictures/Onedrive/vscode/123.txt"
 
 def headInfo(filePath, length):
     '''写入时间信息'''
-
     file = open(filePath,'a')
     file.write("\n")
     for _ in range(length):
@@ -21,9 +20,9 @@ def headInfo(filePath, length):
     file.write('\n')
     file.close()
 
+
 def bodyInfo(filePath, data):
     '''写入数据信息'''
-
     file = open(filePath,'a')
     file.write("- ")
     for ix in range(len(data)):
@@ -33,14 +32,6 @@ def bodyInfo(filePath, data):
     file.write("\n")
     file.close()
     
-def getLength(data, length = 1):
-    '''获取单条数据长度'''
-    for ix in range(len(data)):
-        s = str(data[ix]).replace('[','').replace(']','')
-        s = s.replace("'",'').replace(',','') + ' '
-        length += len(s)
-
-    return length
 
 def main (sym_list = []):
 
@@ -56,7 +47,13 @@ def main (sym_list = []):
             symbol = 3
         sym_list.append(symbol) 
 
-    length = getLength(rep.daletou(sym_list[1], sym_list[2]))
+    if   sym_list[1] == 3 and sym_list[2] == 3:
+        length = 34
+    elif sym_list[1] != 3 and sym_list[2] != 3:
+        length = 24
+    elif sym_list[1] != 3 or  sym_list[2] != 3:
+        length = 29
+    
     headInfo(filePath, length)
 
     for _ in range(int(sym_list[0])):
