@@ -28,7 +28,7 @@ def main ():
     overw(filename)
     x = input('how many times? \n')
     if x == '':
-        x = 7
+        x = 3
     for _ in range(int(x)):
         milionNum = rep.daletou()
         # milionNum = rep.this()
