@@ -1,23 +1,23 @@
 import random
 
+
+def modify(loopNum, seq, lists):
+    '''选号&修改列表&排序'''
+    for _ in range(loopNum):
+        num = random.choice(seq)
+        seq.remove(num)
+        lists.append(num)
+    lists.sort()
+    return lists
+
+
 def daletou(extraFront, extraBehind, l_front  = [], l_behind = [], ll = []):
     ''' 大乐透模拟选号 '''
-
     seq1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35]
     seq2 = [1,2,3,4,5,6,7,8,9,10,11,12]
-        
-    for i in range(5):
-        front = random.choice(seq1)
-        seq1.remove(front)
-        l_front.append(front)
-
-    for i in range(2):
-        behind = random.choice(seq2)
-        seq2.remove(behind)
-        l_behind.append(behind)
-
-    l_front.sort()
-    l_behind.sort()
+    
+    l_front  = modify(5, seq1,  l_front)
+    l_behind = modify(2, seq2, l_behind)
 
     for i in l_front:
         i = '%02d' %int(i)
