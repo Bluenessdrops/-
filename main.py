@@ -2,7 +2,8 @@ import datetime
 
 
 #写入log的完整路径
-filePath = "E:/Kinlrmi.Clevorihno/Pictures/Onedrive/vscode/play&log.txt"
+#请自行补全
+filePath = "E:/xxx/vscode/play&log.txt"
 
 
 def headInfo(filePath, length, gamble_kind):
